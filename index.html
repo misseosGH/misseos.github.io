@@ -350,7 +350,10 @@ document.querySelectorAll(".command").forEach(cmd=>{
 
 cmd.addEventListener("click",()=>{
 
-navigator.clipboard.writeText(cmd.innerText);
+let commandText =
+cmd.querySelector(".cmd").innerText;
+
+navigator.clipboard.writeText(commandText);
 
 cmd.classList.add("copied");
 
