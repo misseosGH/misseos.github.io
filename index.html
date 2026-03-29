@@ -354,19 +354,48 @@ Copied!
 
 function searchCommands(){
 
-let input=document.querySelector(".search-box").value.toLowerCase();
+let input =
+document.querySelector(".search-box")
+.value
+.toLowerCase();
 
-let commands=document.querySelectorAll(".command");
+let sections =
+document.querySelectorAll(".section");
+
+sections.forEach(section=>{
+
+let commands =
+section.querySelectorAll(".command");
+
+let matchCount = 0;
 
 commands.forEach(cmd=>{
 
-if(cmd.textContent.toLowerCase().includes(input)){
+let text =
+cmd.textContent.toLowerCase();
+
+if(text.includes(input)){
 
 cmd.style.display="block";
+matchCount++;
 
 }else{
 
 cmd.style.display="none";
+
+}
+
+});
+
+/* Hide empty sections */
+
+if(matchCount > 0){
+
+section.style.display="block";
+
+}else{
+
+section.style.display="none";
 
 }
 
