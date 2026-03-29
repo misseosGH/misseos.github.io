@@ -6,18 +6,62 @@
 
 <style>
 
+/* BASE */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #0f0f0f;
   color: white;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 40px 20px;
 }
 
+/* WRAPPER */
+
 .wrapper {
-  max-width: 1200px;
+  max-width: 900px;
   margin: auto;
+  padding: 90px 20px 40px 20px;
 }
+
+/* STICKY NAV */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1a1a1a;
+  border-bottom: 2px solid #ff7bc3;
+  z-index: 999;
+}
+
+.nav-inner {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 12px;
+}
+
+.nav-btn {
+  background: #ff7bc3;
+  color: black;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.nav-btn:hover {
+  background: #ffb3dc;
+}
+
+/* HEADER */
 
 h1 {
   text-align: center;
@@ -27,35 +71,30 @@ h1 {
 .subtitle {
   text-align: center;
   color: #ccc;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-/* TWO COLUMN LAYOUT */
+/* SEARCH */
 
-.columns {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
+.search-box {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  border: none;
+  background: #1a1a1a;
+  color: white;
+  font-size: 16px;
 }
 
-/* Make columns stack on phones */
-
-@media (max-width: 800px) {
-  .columns {
-    flex-direction: column;
-  }
-}
-
-.column {
-  flex: 1;
-}
+/* SECTIONS */
 
 .section {
   background: #1a1a1a;
   border: 2px solid #ff7bc3;
   border-radius: 16px;
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 h2 {
@@ -67,9 +106,17 @@ h3 {
   color: #ff7bc3;
 }
 
+/* COMMANDS */
+
 .command {
-  padding: 6px 0;
+  padding: 8px 10px;
   border-bottom: 1px solid #333;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.command:hover {
+  background: #2a2a2a;
 }
 
 .command:last-child {
@@ -81,11 +128,40 @@ h3 {
   font-weight: bold;
 }
 
-</style>
+/* COPY FEEDBACK */
 
+.command.copied {
+  background: #ff7bc3;
+  color: black;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+.nav-inner {
+  flex-wrap: wrap;
+}
+
+}
+
+</style>
 </head>
 
 <body>
+
+<!-- STICKY NAV -->
+
+<div class="navbar">
+<div class="nav-inner">
+
+<a class="nav-btn" href="#general">⚙️ General</a>
+<a class="nav-btn" href="#vtuber">👕 VTuber</a>
+<a class="nav-btn" href="#chat">👾 Chat</a>
+<a class="nav-btn" href="#songs">🎵 Songs</a>
+
+</div>
+</div>
 
 <div class="wrapper">
 
@@ -95,25 +171,28 @@ h3 {
 All the useful chaos in one place 💕
 </p>
 
-<div class="columns">
+<input
+type="text"
+class="search-box"
+placeholder="Search commands..."
+onkeyup="searchCommands()"
+>
 
-<!-- LEFT COLUMN -->
+<!-- GENERAL -->
 
-<div class="column">
+<div class="section" id="general">
 
-<div class="section">
-
-<h2>General Commands</h2>
+<h2>⚙️ General Commands</h2>
 
 <div class="command"><span class="cmd">!discord</span> - Get Discord link</div>
 <div class="command"><span class="cmd">!addquote</span> - Add a quote</div>
 <div class="command"><span class="cmd">!quote</span> - Get random quote</div>
 <div class="command"><span class="cmd">!quote #</span> - Get specific quote</div>
 
-<div class="command"><span class="cmd">!socials</span> - Get all social links</div>
-<div class="command"><span class="cmd">!yt</span> - YouTube link</div>
-<div class="command"><span class="cmd">!tiktok</span> - TikTok link</div>
-<div class="command"><span class="cmd">!throne</span> - Wishlist link</div>
+<div class="command"><span class="cmd">!socials</span></div>
+<div class="command"><span class="cmd">!yt</span></div>
+<div class="command"><span class="cmd">!tiktok</span></div>
+<div class="command"><span class="cmd">!throne</span></div>
 
 <div class="command"><span class="cmd">!lurk</span></div>
 <div class="command"><span class="cmd">!unlurk</span></div>
@@ -143,35 +222,11 @@ All the useful chaos in one place 💕
 
 </div>
 
+<!-- VTUBER -->
 
-<div class="section">
+<div class="section" id="vtuber">
 
-<h2>Chat Forms</h2>
-
-<div class="command"><span class="cmd">!cage</span></div>
-<div class="command"><span class="cmd">!crying</span></div>
-<div class="command"><span class="cmd">!darkmage</span></div>
-<div class="command"><span class="cmd">!fallen</span></div>
-<div class="command"><span class="cmd">!fighter</span></div>
-<div class="command"><span class="cmd">!float</span></div>
-<div class="command"><span class="cmd">!hamster</span></div>
-<div class="command"><span class="cmd">!hanging</span></div>
-<div class="command"><span class="cmd">!heart</span></div>
-<div class="command"><span class="cmd">!needy</span></div>
-<div class="command"><span class="cmd">!jar</span></div>
-<div class="command"><span class="cmd">!kiss</span></div>
-
-</div>
-
-</div>
-
-<!-- RIGHT COLUMN -->
-
-<div class="column">
-
-<div class="section">
-
-<h2>VTuber Commands</h2>
+<h2>👕 VTuber Commands</h2>
 
 <h3>Outfits</h3>
 
@@ -181,10 +236,6 @@ All the useful chaos in one place 💕
 <div class="command"><span class="cmd">!chaos</span></div>
 <div class="command"><span class="cmd">!eepy</span></div>
 <div class="command"><span class="cmd">!fireman</span></div>
-<div class="command"><span class="cmd">!lilguy</span></div>
-<div class="command"><span class="cmd">!nurse</span></div>
-<div class="command"><span class="cmd">!pirate</span></div>
-<div class="command"><span class="cmd">!police</span></div>
 
 <h3>Hair & Eyes</h3>
 
@@ -194,27 +245,84 @@ All the useful chaos in one place 💕
 
 </div>
 
+<!-- CHAT -->
 
-<div class="section">
+<div class="section" id="chat">
 
-<h2>Song Requests (Subs & VIPs)</h2>
+<h2>👾 Chat Forms</h2>
 
-<p style="color:#ccc; font-size:14px;">
+<div class="command"><span class="cmd">!cage</span></div>
+<div class="command"><span class="cmd">!crying</span></div>
+<div class="command"><span class="cmd">!darkmage</span></div>
+
+</div>
+
+<!-- SONGS -->
+
+<div class="section" id="songs">
+
+<h2>🎵 Song Requests (Subs & VIPs)</h2>
+
+<p style="color:#ccc;">
 Channel point redeem available
 </p>
 
 <div class="command"><span class="cmd">!sr</span></div>
 <div class="command"><span class="cmd">!song</span></div>
-<div class="command"><span class="cmd">!addsong</span></div>
-<div class="command"><span class="cmd">!songlink</span></div>
 
 </div>
 
 </div>
 
-</div>
+<script>
 
-</div>
+/* SEARCH */
+
+function searchCommands() {
+
+let input = document.querySelector(".search-box").value.toLowerCase();
+
+let commands = document.querySelectorAll(".command");
+
+commands.forEach(cmd => {
+
+if (cmd.textContent.toLowerCase().includes(input)) {
+
+cmd.style.display = "block";
+
+} else {
+
+cmd.style.display = "none";
+
+}
+
+});
+
+}
+
+/* COPY COMMAND */
+
+document.querySelectorAll(".command").forEach(cmd => {
+
+cmd.addEventListener("click", () => {
+
+let text = cmd.innerText;
+
+navigator.clipboard.writeText(text);
+
+cmd.classList.add("copied");
+
+setTimeout(() => {
+
+cmd.classList.remove("copied");
+
+}, 500);
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
