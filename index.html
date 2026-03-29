@@ -19,15 +19,7 @@ body {
   margin: 0;
 }
 
-/* WRAPPER */
-
-.wrapper {
-  max-width: 900px;
-  margin: auto;
-  padding: 90px 20px 40px 20px;
-}
-
-/* STICKY NAV */
+/* NAVBAR */
 
 .navbar {
   position: fixed;
@@ -43,8 +35,9 @@ body {
   margin: auto;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
   padding: 12px;
+  flex-wrap: wrap;
 }
 
 .nav-btn {
@@ -61,6 +54,14 @@ body {
   background: #ffb3dc;
 }
 
+/* WRAPPER */
+
+.wrapper {
+  max-width: 900px;
+  margin: auto;
+  padding: 100px 20px 40px 20px;
+}
+
 /* HEADER */
 
 h1 {
@@ -71,7 +72,7 @@ h1 {
 .subtitle {
   text-align: center;
   color: #ccc;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 /* SEARCH */
@@ -135,22 +136,12 @@ h3 {
   color: black;
 }
 
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-.nav-inner {
-  flex-wrap: wrap;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- STICKY NAV -->
+<!-- NAVBAR -->
 
 <div class="navbar">
 <div class="nav-inner">
@@ -186,8 +177,8 @@ onkeyup="searchCommands()"
 
 <div class="command"><span class="cmd">!discord</span> - Get Discord link</div>
 <div class="command"><span class="cmd">!addquote</span> - Add a quote</div>
-<div class="command"><span class="cmd">!quote</span> - Get random quote</div>
-<div class="command"><span class="cmd">!quote #</span> - Get specific quote</div>
+<div class="command"><span class="cmd">!quote</span></div>
+<div class="command"><span class="cmd">!quote #</span></div>
 
 <div class="command"><span class="cmd">!socials</span></div>
 <div class="command"><span class="cmd">!yt</span></div>
@@ -222,56 +213,6 @@ onkeyup="searchCommands()"
 
 </div>
 
-<!-- VTUBER -->
-
-<div class="section" id="vtuber">
-
-<h2>👕 VTuber Commands</h2>
-
-<h3>Outfits</h3>
-
-<div class="command"><span class="cmd">!british</span></div>
-<div class="command"><span class="cmd">!builder</span></div>
-<div class="command"><span class="cmd">!cowboy</span></div>
-<div class="command"><span class="cmd">!chaos</span></div>
-<div class="command"><span class="cmd">!eepy</span></div>
-<div class="command"><span class="cmd">!fireman</span></div>
-
-<h3>Hair & Eyes</h3>
-
-<div class="command"><span class="cmd">!green</span></div>
-<div class="command"><span class="cmd">!pink</span></div>
-<div class="command"><span class="cmd">!purple</span></div>
-
-</div>
-
-<!-- CHAT -->
-
-<div class="section" id="chat">
-
-<h2>👾 Chat Forms</h2>
-
-<div class="command"><span class="cmd">!cage</span></div>
-<div class="command"><span class="cmd">!crying</span></div>
-<div class="command"><span class="cmd">!darkmage</span></div>
-
-</div>
-
-<!-- SONGS -->
-
-<div class="section" id="songs">
-
-<h2>🎵 Song Requests (Subs & VIPs)</h2>
-
-<p style="color:#ccc;">
-Channel point redeem available
-</p>
-
-<div class="command"><span class="cmd">!sr</span></div>
-<div class="command"><span class="cmd">!song</span></div>
-
-</div>
-
 </div>
 
 <script>
@@ -300,15 +241,13 @@ cmd.style.display = "none";
 
 }
 
-/* COPY COMMAND */
+/* COPY */
 
 document.querySelectorAll(".command").forEach(cmd => {
 
 cmd.addEventListener("click", () => {
 
-let text = cmd.innerText;
-
-navigator.clipboard.writeText(text);
+navigator.clipboard.writeText(cmd.innerText);
 
 cmd.classList.add("copied");
 
@@ -316,7 +255,7 @@ setTimeout(() => {
 
 cmd.classList.remove("copied");
 
-}, 500);
+}, 400);
 
 });
 
