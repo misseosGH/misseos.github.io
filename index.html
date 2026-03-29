@@ -63,28 +63,33 @@ margin:auto;
 padding:100px 20px 40px;
 }
 
-/* TOP LAYOUT */
+/* TOP ROW */
 
-.top-layout {
+.top-row {
 display:grid;
-grid-template-columns: 1fr 1.2fr 1fr;
+grid-template-columns:1fr 1fr 1fr;
 gap:20px;
-align-items:start;
-margin-bottom:30px;
+align-items:stretch;
+margin-bottom:20px;
 }
 
 .info-card,
-.hero-card {
+.title-card {
 background:#1a1a1a;
 border:2px solid #ff7bc3;
 border-radius:16px;
 padding:18px 20px;
 box-sizing:border-box;
+height:100%;
+}
+
+.info-card h2,
+.title-card h1 {
+margin-top:0;
 }
 
 .info-card h2 {
 color:#ffb3dc;
-margin-top:0;
 margin-bottom:14px;
 font-size:28px;
 display:flex;
@@ -92,46 +97,26 @@ align-items:center;
 gap:10px;
 }
 
-.hero-card {
+.title-card {
 display:flex;
 flex-direction:column;
 justify-content:center;
-min-height:100%;
+align-items:center;
+text-align:center;
 }
 
-/* HERO / HEADER */
-
-h1 {
-text-align:center;
+.title-card h1 {
 color:#ff7bc3;
-margin:0 0 10px 0;
-font-size:54px;
+font-size:56px;
+line-height:1.1;
+margin:0 0 14px 0;
 }
 
 .subtitle {
-text-align:center;
 color:#ccc;
-margin:0 0 20px 0;
-font-size:18px;
-}
-
-.search-box {
-width:100%;
-padding:12px;
-margin-bottom:10px;
-border-radius:12px;
-border:none;
-background:#111;
-color:white;
-font-size:16px;
-box-sizing:border-box;
-}
-
-.copy-hint {
-text-align:center;
-color:#aaa;
-font-size:14px;
 margin:0;
+font-size:18px;
+line-height:1.4;
 }
 
 /* SCHEDULE */
@@ -164,7 +149,7 @@ color:white;
 }
 
 .schedule-note {
-margin-top:14px;
+margin-top:16px;
 font-size:14px;
 color:#ccc;
 line-height:1.5;
@@ -217,6 +202,30 @@ transform:translateY(-1px);
 
 .social-btn span {
 color:white;
+}
+
+/* SEARCH AREA */
+
+.search-area {
+margin-bottom:8px;
+}
+
+.search-box {
+width:100%;
+padding:14px 16px;
+border-radius:12px;
+border:none;
+background:#1a1a1a;
+color:white;
+font-size:16px;
+box-sizing:border-box;
+}
+
+.copy-hint {
+text-align:center;
+color:#aaa;
+font-size:14px;
+margin:0 0 25px 0;
 }
 
 /* SECTIONS */
@@ -292,16 +301,16 @@ opacity: 1;
 /* MOBILE */
 
 @media (max-width: 950px) {
-.top-layout {
+.top-row {
 grid-template-columns:1fr;
 }
 
-h1 {
+.title-card h1 {
 font-size:42px;
 }
 
-.hero-card,
-.info-card {
+.info-card,
+.title-card {
 padding:18px;
 }
 }
@@ -326,7 +335,7 @@ padding:18px;
 
 <!-- TOP ROW -->
 
-<div class="top-layout">
+<div class="top-row">
 
 <!-- LEFT: SCHEDULE -->
 
@@ -367,25 +376,11 @@ for updates.
 </p>
 </div>
 
-<!-- CENTER: HEADER / SEARCH -->
+<!-- CENTER: TITLE -->
 
-<div class="hero-card">
+<div class="title-card">
 <h1>Stream Commands</h1>
-
-<p class="subtitle">
-All the useful chaos in one place 💕
-</p>
-
-<input
-type="text"
-class="search-box"
-placeholder="Search commands..."
-onkeyup="searchCommands()"
->
-
-<p class="copy-hint">
-Click any command to copy it to your clipboard
-</p>
+<p class="subtitle">All the useful chaos in one place 💕</p>
 </div>
 
 <!-- RIGHT: SOCIALS -->
@@ -408,10 +403,30 @@ Click any command to copy it to your clipboard
 <i class="fa-brands fa-discord"></i>
 <span>Discord</span>
 </a>
+
+<a class="social-btn" href="https://throne.com/misseos" target="_blank" rel="noopener noreferrer">
+<i class="fa-solid fa-gift"></i>
+<span>Throne</span>
+</a>
 </div>
 </div>
 
 </div>
+
+<!-- SEARCH -->
+
+<div class="search-area">
+<input
+type="text"
+class="search-box"
+placeholder="Search commands..."
+onkeyup="searchCommands()"
+>
+</div>
+
+<p class="copy-hint">
+Click any command to copy it to your clipboard
+</p>
 
 <!-- GENERAL -->
 
