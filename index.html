@@ -15,7 +15,7 @@ body {
 }
 
 .wrapper {
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto;
 }
 
@@ -30,6 +30,18 @@ h1 {
   margin-bottom: 30px;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .section {
   background: #1a1a1a;
   border: 2px solid #ff7bc3;
@@ -41,6 +53,11 @@ h1 {
 h2 {
   color: #ffb3dc;
   margin-top: 0;
+}
+
+h3 {
+  color: #ff7bc3;
+  margin-top: 20px;
 }
 
 .command {
@@ -70,6 +87,12 @@ h2 {
 <p class="subtitle">
 All the useful chaos in one place 💕
 </p>
+
+<div class="grid">
+
+<!-- LEFT COLUMN -->
+
+<div>
 
 <!-- GENERAL -->
 
@@ -114,6 +137,40 @@ All the useful chaos in one place 💕
 <div class="command"><span class="cmd">?checkin</span> - Show check-in count</div>
 
 </div>
+
+<!-- CHAT FORMS -->
+
+<div class="section">
+
+<h2>Chat Forms</h2>
+
+<div class="command"><span class="cmd">!cage</span></div>
+<div class="command"><span class="cmd">!crying</span></div>
+<div class="command"><span class="cmd">!darkmage</span></div>
+<div class="command"><span class="cmd">!fallen</span></div>
+<div class="command"><span class="cmd">!fighter</span></div>
+<div class="command"><span class="cmd">!float</span></div>
+<div class="command"><span class="cmd">!hamster</span></div>
+<div class="command"><span class="cmd">!hanging</span></div>
+<div class="command"><span class="cmd">!heart</span></div>
+<div class="command"><span class="cmd">!needy</span></div>
+<div class="command"><span class="cmd">!jar</span></div>
+<div class="command"><span class="cmd">!kiss</span></div>
+<div class="command"><span class="cmd">!mage</span></div>
+<div class="command"><span class="cmd">!mask</span></div>
+<div class="command"><span class="cmd">!nom</span></div>
+<div class="command"><span class="cmd">!rope</span></div>
+<div class="command"><span class="cmd">!tank</span></div>
+<div class="command"><span class="cmd">!vampire</span></div>
+<div class="command"><span class="cmd">!wrapped</span></div>
+
+</div>
+
+</div>
+
+<!-- RIGHT COLUMN -->
+
+<div>
 
 <!-- VTUBER -->
 
@@ -173,34 +230,6 @@ All the useful chaos in one place 💕
 
 </div>
 
-<!-- CHAT FORMS -->
-
-<div class="section">
-
-<h2>Chat Forms</h2>
-
-<div class="command"><span class="cmd">!cage</span></div>
-<div class="command"><span class="cmd">!crying</span></div>
-<div class="command"><span class="cmd">!darkmage</span></div>
-<div class="command"><span class="cmd">!fallen</span></div>
-<div class="command"><span class="cmd">!fighter</span></div>
-<div class="command"><span class="cmd">!float</span></div>
-<div class="command"><span class="cmd">!hamster</span></div>
-<div class="command"><span class="cmd">!hanging</span></div>
-<div class="command"><span class="cmd">!heart</span></div>
-<div class="command"><span class="cmd">!needy</span></div>
-<div class="command"><span class="cmd">!jar</span></div>
-<div class="command"><span class="cmd">!kiss</span></div>
-<div class="command"><span class="cmd">!mage</span></div>
-<div class="command"><span class="cmd">!mask</span></div>
-<div class="command"><span class="cmd">!nom</span></div>
-<div class="command"><span class="cmd">!rope</span></div>
-<div class="command"><span class="cmd">!tank</span></div>
-<div class="command"><span class="cmd">!vampire</span></div>
-<div class="command"><span class="cmd">!wrapped</span></div>
-
-</div>
-
 <!-- SONG REQUESTS -->
 
 <div class="section">
@@ -220,6 +249,10 @@ Channel point redeem available
 <div class="command"><span class="cmd">!myqueue</span> - Your queue spot</div>
 <div class="command"><span class="cmd">!queuedsongs</span> - Next songs</div>
 <div class="command"><span class="cmd">!remove</span> - Remove request</div>
+
+</div>
+
+</div>
 
 </div>
 
