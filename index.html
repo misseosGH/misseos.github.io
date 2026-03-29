@@ -72,7 +72,7 @@ h1 {
 .subtitle {
   text-align: center;
   color: #ccc;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 /* SEARCH */
@@ -80,12 +80,21 @@ h1 {
 .search-box {
   width: 100%;
   padding: 12px;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   border-radius: 12px;
   border: none;
   background: #1a1a1a;
   color: white;
   font-size: 16px;
+}
+
+/* INSTRUCTION TEXT */
+
+.copy-hint {
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 25px;
 }
 
 /* SECTIONS */
@@ -169,6 +178,10 @@ placeholder="Search commands..."
 onkeyup="searchCommands()"
 >
 
+<p class="copy-hint">
+Click any command to copy it to your clipboard
+</p>
+
 <!-- GENERAL -->
 
 <div class="section" id="general">
@@ -176,40 +189,90 @@ onkeyup="searchCommands()"
 <h2>⚙️ General Commands</h2>
 
 <div class="command"><span class="cmd">!discord</span> - Get Discord link</div>
-<div class="command"><span class="cmd">!addquote</span> - Add a quote</div>
-<div class="command"><span class="cmd">!quote</span></div>
-<div class="command"><span class="cmd">!quote #</span></div>
+<div class="command"><span class="cmd">!addquote</span> - Add a quote to the list</div>
+<div class="command"><span class="cmd">!quote</span> - Get random quote</div>
+<div class="command"><span class="cmd">!quote #</span> - Get specific quote</div>
 
-<div class="command"><span class="cmd">!socials</span></div>
-<div class="command"><span class="cmd">!yt</span></div>
-<div class="command"><span class="cmd">!tiktok</span></div>
-<div class="command"><span class="cmd">!throne</span></div>
+<div class="command"><span class="cmd">!socials</span> - Get all social links</div>
+<div class="command"><span class="cmd">!yt</span> - YouTube link</div>
+<div class="command"><span class="cmd">!tiktok</span> - TikTok link</div>
+<div class="command"><span class="cmd">!throne</span> - Wishlist link</div>
 
-<div class="command"><span class="cmd">!lurk</span></div>
-<div class="command"><span class="cmd">!unlurk</span></div>
+<div class="command"><span class="cmd">!lurk</span> - Going to lurk</div>
+<div class="command"><span class="cmd">!unlurk</span> - Back from lurk</div>
 
-<div class="command"><span class="cmd">!sma</span></div>
-<div class="command"><span class="cmd">!onlyfans</span></div>
+<div class="command"><span class="cmd">!sma</span> - Play Snog Marry Avoid</div>
+<div class="command"><span class="cmd">!onlyfans</span> - Joke command</div>
 
-<div class="command"><span class="cmd">!followage</span></div>
-<div class="command"><span class="cmd">!posture</span></div>
+<div class="command"><span class="cmd">!followage</span> - Show follow time</div>
+<div class="command"><span class="cmd">!posture</span> - Posture reminder</div>
 
-<div class="command"><span class="cmd">!loo</span></div>
-<div class="command"><span class="cmd">!unloo</span></div>
+<div class="command"><span class="cmd">!loo</span> - Going to loo</div>
+<div class="command"><span class="cmd">!unloo</span> - Back from loo</div>
 
-<div class="command"><span class="cmd">!blammo</span></div>
-<div class="command"><span class="cmd">?blammo</span></div>
+<div class="command"><span class="cmd">!blammo</span> - Add Blammo count</div>
+<div class="command"><span class="cmd">?blammo</span> - Show Blammo count</div>
 
-<div class="command"><span class="cmd">!fme</span></div>
-<div class="command"><span class="cmd">?fme</span></div>
+<div class="command"><span class="cmd">!fme</span> - Add F Me count</div>
+<div class="command"><span class="cmd">?fme</span> - Show F Me count</div>
 
-<div class="command"><span class="cmd">!hug</span></div>
-<div class="command"><span class="cmd">?hug</span></div>
+<div class="command"><span class="cmd">!hug</span> - Hug someone</div>
+<div class="command"><span class="cmd">?hug</span> - Show hug count</div>
 
-<div class="command"><span class="cmd">!spank</span></div>
-<div class="command"><span class="cmd">?spank</span></div>
+<div class="command"><span class="cmd">!spank</span> - Spank someone</div>
+<div class="command"><span class="cmd">?spank</span> - Show spank count</div>
 
-<div class="command"><span class="cmd">?checkin</span></div>
+<div class="command"><span class="cmd">?checkin</span> - Show check-in count</div>
+
+</div>
+
+<!-- VTUBER (starter version — will expand next) -->
+
+<div class="section" id="vtuber">
+
+<h2>👕 VTuber Commands</h2>
+
+<h3>Outfits</h3>
+
+<div class="command"><span class="cmd">!british</span></div>
+<div class="command"><span class="cmd">!builder</span></div>
+<div class="command"><span class="cmd">!cowboy</span></div>
+<div class="command"><span class="cmd">!chaos</span></div>
+<div class="command"><span class="cmd">!eepy</span></div>
+<div class="command"><span class="cmd">!fireman</span></div>
+
+<h3>Hair & Eyes</h3>
+
+<div class="command"><span class="cmd">!green</span></div>
+<div class="command"><span class="cmd">!pink</span></div>
+<div class="command"><span class="cmd">!purple</span></div>
+
+</div>
+
+<!-- CHAT -->
+
+<div class="section" id="chat">
+
+<h2>👾 Chat Forms</h2>
+
+<div class="command"><span class="cmd">!cage</span></div>
+<div class="command"><span class="cmd">!crying</span></div>
+<div class="command"><span class="cmd">!darkmage</span></div>
+
+</div>
+
+<!-- SONGS -->
+
+<div class="section" id="songs">
+
+<h2>🎵 Song Requests (Subs & VIPs)</h2>
+
+<p style="color:#ccc;">
+Channel point redeem available
+</p>
+
+<div class="command"><span class="cmd">!sr</span> - Request song</div>
+<div class="command"><span class="cmd">!song</span> - Current song</div>
 
 </div>
 
@@ -221,13 +284,20 @@ onkeyup="searchCommands()"
 
 function searchCommands() {
 
-let input = document.querySelector(".search-box").value.toLowerCase();
+let input =
+document.querySelector(".search-box")
+.value.toLowerCase();
 
-let commands = document.querySelectorAll(".command");
+let commands =
+document.querySelectorAll(".command");
 
 commands.forEach(cmd => {
 
-if (cmd.textContent.toLowerCase().includes(input)) {
+if (
+cmd.textContent
+.toLowerCase()
+.includes(input)
+) {
 
 cmd.style.display = "block";
 
@@ -243,11 +313,14 @@ cmd.style.display = "none";
 
 /* COPY */
 
-document.querySelectorAll(".command").forEach(cmd => {
+document.querySelectorAll(".command")
+.forEach(cmd => {
 
 cmd.addEventListener("click", () => {
 
-navigator.clipboard.writeText(cmd.innerText);
+navigator.clipboard.writeText(
+cmd.innerText
+);
 
 cmd.classList.add("copied");
 
