@@ -15,7 +15,7 @@ body {
 }
 
 .wrapper {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -30,16 +30,24 @@ h1 {
   margin-bottom: 30px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+/* TWO COLUMN LAYOUT */
+
+.columns {
+  display: flex;
   gap: 20px;
+  align-items: flex-start;
 }
 
-@media (max-width: 700px) {
-  .grid {
-    grid-template-columns: 1fr;
+/* Make columns stack on phones */
+
+@media (max-width: 800px) {
+  .columns {
+    flex-direction: column;
   }
+}
+
+.column {
+  flex: 1;
 }
 
 .section {
@@ -57,7 +65,6 @@ h2 {
 
 h3 {
   color: #ff7bc3;
-  margin-top: 20px;
 }
 
 .command {
@@ -88,13 +95,11 @@ h3 {
 All the useful chaos in one place 💕
 </p>
 
-<div class="grid">
+<div class="columns">
 
 <!-- LEFT COLUMN -->
 
-<div>
-
-<!-- GENERAL -->
+<div class="column">
 
 <div class="section">
 
@@ -110,35 +115,34 @@ All the useful chaos in one place 💕
 <div class="command"><span class="cmd">!tiktok</span> - TikTok link</div>
 <div class="command"><span class="cmd">!throne</span> - Wishlist link</div>
 
-<div class="command"><span class="cmd">!lurk</span> - Going to lurk</div>
-<div class="command"><span class="cmd">!unlurk</span> - Back from lurk</div>
+<div class="command"><span class="cmd">!lurk</span></div>
+<div class="command"><span class="cmd">!unlurk</span></div>
 
-<div class="command"><span class="cmd">!sma</span> - Play Snog Marry Avoid</div>
-<div class="command"><span class="cmd">!onlyfans</span> - OnlyFans joke command</div>
+<div class="command"><span class="cmd">!sma</span></div>
+<div class="command"><span class="cmd">!onlyfans</span></div>
 
-<div class="command"><span class="cmd">!followage</span> - Show follow time</div>
-<div class="command"><span class="cmd">!posture</span> - Posture reminder</div>
+<div class="command"><span class="cmd">!followage</span></div>
+<div class="command"><span class="cmd">!posture</span></div>
 
-<div class="command"><span class="cmd">!loo</span> - Gone to loo</div>
-<div class="command"><span class="cmd">!unloo</span> - Back from loo</div>
+<div class="command"><span class="cmd">!loo</span></div>
+<div class="command"><span class="cmd">!unloo</span></div>
 
-<div class="command"><span class="cmd">!blammo</span> - Add Blammo count</div>
-<div class="command"><span class="cmd">?blammo</span> - Show Blammo count</div>
+<div class="command"><span class="cmd">!blammo</span></div>
+<div class="command"><span class="cmd">?blammo</span></div>
 
-<div class="command"><span class="cmd">!fme</span> - Add F Me count</div>
-<div class="command"><span class="cmd">?fme</span> - Show F Me count</div>
+<div class="command"><span class="cmd">!fme</span></div>
+<div class="command"><span class="cmd">?fme</span></div>
 
-<div class="command"><span class="cmd">!hug</span> - Hug someone</div>
-<div class="command"><span class="cmd">?hug</span> - Show hug count</div>
+<div class="command"><span class="cmd">!hug</span></div>
+<div class="command"><span class="cmd">?hug</span></div>
 
-<div class="command"><span class="cmd">!spank</span> - Spank someone</div>
-<div class="command"><span class="cmd">?spank</span> - Show spank count</div>
+<div class="command"><span class="cmd">!spank</span></div>
+<div class="command"><span class="cmd">?spank</span></div>
 
-<div class="command"><span class="cmd">?checkin</span> - Show check-in count</div>
+<div class="command"><span class="cmd">?checkin</span></div>
 
 </div>
 
-<!-- CHAT FORMS -->
 
 <div class="section">
 
@@ -156,13 +160,6 @@ All the useful chaos in one place 💕
 <div class="command"><span class="cmd">!needy</span></div>
 <div class="command"><span class="cmd">!jar</span></div>
 <div class="command"><span class="cmd">!kiss</span></div>
-<div class="command"><span class="cmd">!mage</span></div>
-<div class="command"><span class="cmd">!mask</span></div>
-<div class="command"><span class="cmd">!nom</span></div>
-<div class="command"><span class="cmd">!rope</span></div>
-<div class="command"><span class="cmd">!tank</span></div>
-<div class="command"><span class="cmd">!vampire</span></div>
-<div class="command"><span class="cmd">!wrapped</span></div>
 
 </div>
 
@@ -170,9 +167,7 @@ All the useful chaos in one place 💕
 
 <!-- RIGHT COLUMN -->
 
-<div>
-
-<!-- VTUBER -->
+<div class="column">
 
 <div class="section">
 
@@ -190,65 +185,28 @@ All the useful chaos in one place 💕
 <div class="command"><span class="cmd">!nurse</span></div>
 <div class="command"><span class="cmd">!pirate</span></div>
 <div class="command"><span class="cmd">!police</span></div>
-<div class="command"><span class="cmd">!rave</span></div>
-<div class="command"><span class="cmd">!sailor</span></div>
-<div class="command"><span class="cmd">!sherlock</span></div>
-<div class="command"><span class="cmd">!swim</span></div>
-<div class="command"><span class="cmd">!tarkov</span></div>
-<div class="command"><span class="cmd">!teacher</span></div>
-<div class="command"><span class="cmd">!viking</span></div>
-<div class="command"><span class="cmd">!witch</span></div>
-<div class="command"><span class="cmd">!alien</span></div>
-<div class="command"><span class="cmd">!bathroom</span></div>
-<div class="command"><span class="cmd">!streamer</span></div>
-<div class="command"><span class="cmd">!kissingbooth</span></div>
-<div class="command"><span class="cmd">!jail</span></div>
-
-<h3>Instants</h3>
-
-<div class="command"><span class="cmd">!garbage</span></div>
-<div class="command"><span class="cmd">!adopt</span></div>
-<div class="command"><span class="cmd">!math</span></div>
-<div class="command"><span class="cmd">!ghost</span></div>
-<div class="command"><span class="cmd">!cook</span></div>
-<div class="command"><span class="cmd">!cope</span></div>
-<div class="command"><span class="cmd">!flex</span></div>
-<div class="command"><span class="cmd">!hide</span></div>
-<div class="command"><span class="cmd">!rat</span></div>
 
 <h3>Hair & Eyes</h3>
 
 <div class="command"><span class="cmd">!green</span></div>
 <div class="command"><span class="cmd">!pink</span></div>
 <div class="command"><span class="cmd">!purple</span></div>
-<div class="command"><span class="cmd">!red</span></div>
-<div class="command"><span class="cmd">!teal</span></div>
-<div class="command"><span class="cmd">!yellow</span></div>
-<div class="command"><span class="cmd">!blue</span></div>
-<div class="command"><span class="cmd">!orange</span></div>
-<div class="command"><span class="cmd">!evil</span></div>
 
 </div>
 
-<!-- SONG REQUESTS -->
 
 <div class="section">
 
 <h2>Song Requests (Subs & VIPs)</h2>
 
-<p style="color:#ccc; font-size:14px; margin-top:-5px;">
+<p style="color:#ccc; font-size:14px;">
 Channel point redeem available
 </p>
 
-<div class="command"><span class="cmd">!sr</span> - Request a song</div>
-<div class="command"><span class="cmd">!song</span> - Current song</div>
-<div class="command"><span class="cmd">!addsong</span> - Add song to playlist</div>
-<div class="command"><span class="cmd">!songlink</span> - Get Spotify link</div>
-<div class="command"><span class="cmd">!lastsong</span> - Last played song</div>
-<div class="command"><span class="cmd">!requests</span> - Show queue</div>
-<div class="command"><span class="cmd">!myqueue</span> - Your queue spot</div>
-<div class="command"><span class="cmd">!queuedsongs</span> - Next songs</div>
-<div class="command"><span class="cmd">!remove</span> - Remove request</div>
+<div class="command"><span class="cmd">!sr</span></div>
+<div class="command"><span class="cmd">!song</span></div>
+<div class="command"><span class="cmd">!addsong</span></div>
+<div class="command"><span class="cmd">!songlink</span></div>
 
 </div>
 
