@@ -32,7 +32,7 @@ z-index:999;
 }
 
 .nav-inner {
-max-width:900px;
+max-width:1200px;
 margin:auto;
 display:flex;
 justify-content:center;
@@ -58,38 +58,88 @@ background:#ffb3dc;
 /* WRAPPER */
 
 .wrapper {
-max-width:900px;
+max-width:1200px;
 margin:auto;
 padding:100px 20px 40px;
 }
 
-/* TOP INFO ROW */
+/* TOP LAYOUT */
 
-.top-info {
+.top-layout {
 display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns: 1fr 1.2fr 1fr;
 gap:20px;
+align-items:start;
 margin-bottom:30px;
 }
 
-.info-card {
+.info-card,
+.hero-card {
 background:#1a1a1a;
 border:2px solid #ff7bc3;
 border-radius:16px;
-padding:20px;
+padding:18px 20px;
+box-sizing:border-box;
 }
 
 .info-card h2 {
 color:#ffb3dc;
 margin-top:0;
-margin-bottom:16px;
+margin-bottom:14px;
 font-size:28px;
+display:flex;
+align-items:center;
+gap:10px;
 }
+
+.hero-card {
+display:flex;
+flex-direction:column;
+justify-content:center;
+min-height:100%;
+}
+
+/* HERO / HEADER */
+
+h1 {
+text-align:center;
+color:#ff7bc3;
+margin:0 0 10px 0;
+font-size:54px;
+}
+
+.subtitle {
+text-align:center;
+color:#ccc;
+margin:0 0 20px 0;
+font-size:18px;
+}
+
+.search-box {
+width:100%;
+padding:12px;
+margin-bottom:10px;
+border-radius:12px;
+border:none;
+background:#111;
+color:white;
+font-size:16px;
+box-sizing:border-box;
+}
+
+.copy-hint {
+text-align:center;
+color:#aaa;
+font-size:14px;
+margin:0;
+}
+
+/* SCHEDULE */
 
 .schedule-list {
 display:flex;
 flex-direction:column;
-gap:10px;
+gap:0;
 }
 
 .schedule-item {
@@ -114,7 +164,7 @@ color:white;
 }
 
 .schedule-note {
-margin-top:16px;
+margin-top:14px;
 font-size:14px;
 color:#ccc;
 line-height:1.5;
@@ -130,10 +180,12 @@ font-weight:bold;
 color:#ffb3dc;
 }
 
+/* SOCIALS */
+
 .social-links {
 display:grid;
 grid-template-columns:1fr;
-gap:12px;
+gap:10px;
 }
 
 .social-btn {
@@ -143,7 +195,7 @@ gap:12px;
 background:#111;
 border:1px solid #333;
 border-radius:12px;
-padding:12px 14px;
+padding:11px 14px;
 color:white;
 text-decoration:none;
 font-weight:bold;
@@ -165,40 +217,6 @@ transform:translateY(-1px);
 
 .social-btn span {
 color:white;
-}
-
-/* HEADER */
-
-h1 {
-text-align:center;
-color:#ff7bc3;
-}
-
-.subtitle {
-text-align:center;
-color:#ccc;
-margin-bottom:20px;
-}
-
-/* SEARCH */
-
-.search-box {
-width:100%;
-padding:12px;
-margin-bottom:10px;
-border-radius:12px;
-border:none;
-background:#1a1a1a;
-color:white;
-font-size:16px;
-box-sizing:border-box;
-}
-
-.copy-hint {
-text-align:center;
-color:#aaa;
-font-size:14px;
-margin-bottom:25px;
 }
 
 /* SECTIONS */
@@ -273,17 +291,18 @@ opacity: 1;
 
 /* MOBILE */
 
-@media (max-width: 700px) {
-.top-info {
+@media (max-width: 950px) {
+.top-layout {
 grid-template-columns:1fr;
 }
 
-.info-card h2 {
-font-size:24px;
+h1 {
+font-size:42px;
 }
 
-.schedule-item {
-font-size:15px;
+.hero-card,
+.info-card {
+padding:18px;
 }
 }
 
@@ -296,20 +315,20 @@ font-size:15px;
 
 <div class="navbar">
 <div class="nav-inner">
-
 <a class="nav-btn" href="#general">⚙️ General</a>
 <a class="nav-btn" href="#chat">👾 Chat</a>
 <a class="nav-btn" href="#vtuber">👕 VTuber</a>
 <a class="nav-btn" href="#songs">🎵 Songs</a>
-
 </div>
 </div>
 
 <div class="wrapper">
 
-<!-- TOP INFO -->
+<!-- TOP ROW -->
 
-<div class="top-info">
+<div class="top-layout">
+
+<!-- LEFT: SCHEDULE -->
 
 <div class="info-card">
 <h2><i class="fa-regular fa-calendar"></i> Stream Schedule</h2>
@@ -348,6 +367,29 @@ for updates.
 </p>
 </div>
 
+<!-- CENTER: HEADER / SEARCH -->
+
+<div class="hero-card">
+<h1>Stream Commands</h1>
+
+<p class="subtitle">
+All the useful chaos in one place 💕
+</p>
+
+<input
+type="text"
+class="search-box"
+placeholder="Search commands..."
+onkeyup="searchCommands()"
+>
+
+<p class="copy-hint">
+Click any command to copy it to your clipboard
+</p>
+</div>
+
+<!-- RIGHT: SOCIALS -->
+
 <div class="info-card">
 <h2><i class="fa-solid fa-link"></i> Socials</h2>
 
@@ -370,23 +412,6 @@ for updates.
 </div>
 
 </div>
-
-<h1>Stream Commands</h1>
-
-<p class="subtitle">
-All the useful chaos in one place 💕
-</p>
-
-<input
-type="text"
-class="search-box"
-placeholder="Search commands..."
-onkeyup="searchCommands()"
->
-
-<p class="copy-hint">
-Click any command to copy it to your clipboard
-</p>
 
 <!-- GENERAL -->
 
@@ -574,8 +599,6 @@ cmd.style.display="none";
 }
 
 });
-
-/* Hide empty sections */
 
 if(matchCount > 0){
 
