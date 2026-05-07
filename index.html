@@ -32,7 +32,7 @@ z-index:999;
 }
 
 .nav-inner {
-max-width:1200px;
+max-width:1400px;
 margin:auto;
 display:flex;
 justify-content:center;
@@ -49,6 +49,7 @@ border-radius:12px;
 font-weight:bold;
 text-decoration:none;
 transition:0.2s;
+white-space:nowrap;
 }
 
 .nav-btn:hover {
@@ -60,7 +61,7 @@ background:#ffb3dc;
 .wrapper {
 max-width:1200px;
 margin:auto;
-padding:100px 20px 40px;
+padding:120px 20px 40px;
 }
 
 /* TOP ROW */
@@ -200,11 +201,7 @@ border-color:#ff7bc3;
 transform:translateY(-1px);
 }
 
-.social-btn span {
-color:white;
-}
-
-/* SEARCH AREA */
+/* SEARCH */
 
 .search-area {
 margin-bottom:8px;
@@ -238,6 +235,13 @@ padding:20px;
 margin-bottom:25px;
 }
 
+.section-note {
+color:#ccc;
+font-size:15px;
+line-height:1.6;
+margin-bottom:18px;
+}
+
 h2 {
 color:#ffb3dc;
 margin-top:0;
@@ -245,23 +249,31 @@ margin-top:0;
 
 h3 {
 color:#ff7bc3;
+margin-top:30px;
 }
 
 /* COMMANDS */
 
+.command-grid {
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(170px, 1fr));
+gap:10px;
+margin-top:12px;
+}
+
 .command {
-padding:8px 10px;
-border-bottom:1px solid #333;
+padding:10px 12px;
+border:1px solid #333;
+border-radius:12px;
+background:#111;
 cursor:pointer;
 transition:0.2s;
 }
 
 .command:hover {
 background:#2a2a2a;
-}
-
-.command:last-child {
-border-bottom:none;
+border-color:#ff7bc3;
+transform:translateY(-1px);
 }
 
 .cmd {
@@ -279,28 +291,29 @@ color:black;
 /* COPY POPUP */
 
 .copy-popup {
-position: fixed;
-bottom: 25px;
-left: 50%;
-transform: translateX(-50%);
-background: #ff7bc3;
-color: black;
-padding: 10px 18px;
-border-radius: 12px;
-font-weight: bold;
-opacity: 0;
-pointer-events: none;
-transition: opacity 0.25s ease;
-z-index: 1000;
+position:fixed;
+bottom:25px;
+left:50%;
+transform:translateX(-50%);
+background:#ff7bc3;
+color:black;
+padding:10px 18px;
+border-radius:12px;
+font-weight:bold;
+opacity:0;
+pointer-events:none;
+transition:opacity 0.25s ease;
+z-index:1000;
 }
 
 .copy-popup.show {
-opacity: 1;
+opacity:1;
 }
 
 /* MOBILE */
 
-@media (max-width: 950px) {
+@media (max-width:950px) {
+
 .top-row {
 grid-template-columns:1fr;
 }
@@ -313,6 +326,7 @@ font-size:42px;
 .title-card {
 padding:18px;
 }
+
 }
 
 </style>
@@ -324,10 +338,15 @@ padding:18px;
 
 <div class="navbar">
 <div class="nav-inner">
+
 <a class="nav-btn" href="#general">⚙️ General</a>
 <a class="nav-btn" href="#chat">👾 Chat</a>
-<a class="nav-btn" href="#vtuber">👕 VTuber</a>
+<a class="nav-btn" href="#hats">🧢 VTuber Hats</a>
+<a class="nav-btn" href="#instants">⚡ VTuber FX</a>
+<a class="nav-btn" href="#colours">🎨 VTuber Colours</a>
+<a class="nav-btn" href="#stickers">✨ VTuber Stickers</a>
 <a class="nav-btn" href="#songs">🎵 Songs</a>
+
 </div>
 </div>
 
@@ -337,12 +356,17 @@ padding:18px;
 
 <div class="top-row">
 
-<!-- LEFT: SCHEDULE -->
+<!-- LEFT -->
 
 <div class="info-card">
-<h2><i class="fa-regular fa-calendar"></i> Stream Schedule</h2>
+
+<h2>
+<i class="fa-regular fa-calendar"></i>
+Stream Schedule
+</h2>
 
 <div class="schedule-list">
+
 <div class="schedule-item">
 <span class="schedule-day">Wednesday</span>
 <span class="schedule-time">12pm UK</span>
@@ -367,47 +391,60 @@ padding:18px;
 <span class="schedule-day">Sunday</span>
 <span class="schedule-time">9am UK</span>
 </div>
+
 </div>
 
 <p class="schedule-note">
 Schedule may change - join the
-<a href="https://discord.com/invite/FwvGbhEzDR" target="_blank" rel="noopener noreferrer">Discord</a>
+<a href="https://discord.com/invite/FwvGbhEzDR" target="_blank">Discord</a>
 for updates.
 </p>
+
 </div>
 
-<!-- CENTER: TITLE -->
+<!-- CENTER -->
 
 <div class="title-card">
+
 <h1>Stream Commands</h1>
-<p class="subtitle">All the useful chaos in one place 💕</p>
+
+<p class="subtitle">
+All the useful chaos in one place 💕
+</p>
+
 </div>
 
-<!-- RIGHT: SOCIALS -->
+<!-- RIGHT -->
 
 <div class="info-card">
-<h2><i class="fa-solid fa-link"></i> Socials</h2>
+
+<h2>
+<i class="fa-solid fa-link"></i>
+Socials
+</h2>
 
 <div class="social-links">
-<a class="social-btn" href="https://www.youtube.com/channel/UCP_lwTyk1xTPkprlGL_0xGw" target="_blank" rel="noopener noreferrer">
+
+<a class="social-btn" href="https://www.youtube.com/channel/UCP_lwTyk1xTPkprlGL_0xGw" target="_blank">
 <i class="fa-brands fa-youtube"></i>
 <span>YouTube</span>
 </a>
 
-<a class="social-btn" href="https://www.tiktok.com/@misseos.ttv?lang=en" target="_blank" rel="noopener noreferrer">
+<a class="social-btn" href="https://www.tiktok.com/@misseos.ttv?lang=en" target="_blank">
 <i class="fa-brands fa-tiktok"></i>
 <span>TikTok</span>
 </a>
 
-<a class="social-btn" href="https://discord.gg/FwvGbhEzDR" target="_blank" rel="noopener noreferrer">
+<a class="social-btn" href="https://discord.gg/FwvGbhEzDR" target="_blank">
 <i class="fa-brands fa-discord"></i>
 <span>Discord</span>
 </a>
 
-<a class="social-btn" href="https://throne.com/misseos" target="_blank" rel="noopener noreferrer">
+<a class="social-btn" href="https://throne.com/misseos" target="_blank">
 <i class="fa-solid fa-gift"></i>
 <span>Throne</span>
 </a>
+
 </div>
 </div>
 
@@ -416,16 +453,18 @@ for updates.
 <!-- SEARCH -->
 
 <div class="search-area">
+
 <input
 type="text"
 class="search-box"
 placeholder="Search commands..."
 onkeyup="searchCommands()"
 >
+
 </div>
 
 <p class="copy-hint">
-Click any command to copy it to your clipboard
+Click any command or trigger word to copy it
 </p>
 
 <!-- GENERAL -->
@@ -434,31 +473,34 @@ Click any command to copy it to your clipboard
 
 <h2>⚙️ General Commands</h2>
 
-<div class="command"><span class="cmd">!discord</span> - Get the Discord link.</div>
-<div class="command"><span class="cmd">!addquote</span> - Add a quote to the list.</div>
-<div class="command"><span class="cmd">!quote</span> - Get random quote in chat.</div>
-<div class="command"><span class="cmd">!quote</span> Plus number - Get specific quote in chat.</div>
-<div class="command"><span class="cmd">!socials</span> - Get all social links.</div>
-<div class="command"><span class="cmd">!yt</span> - Get YouTube link.</div>
-<div class="command"><span class="cmd">!tiktok</span> - Get TikTok link.</div>
-<div class="command"><span class="cmd">!throne</span> - Get Throne gift list link.</div>
-<div class="command"><span class="cmd">!lurk</span> - When you're off to lurk.</div>
-<div class="command"><span class="cmd">!unlurk</span> - When you're back from lurk.</div>
-<div class="command"><span class="cmd">!sma</span> - Play Snog Marry Avoid.</div>
-<div class="command"><span class="cmd">!onlyfans</span> - OnlyFans!</div>
-<div class="command"><span class="cmd">!followage</span> - See how long you've been following.</div>
-<div class="command"><span class="cmd">!posture</span> - When I need a posture check.</div>
-<div class="command"><span class="cmd">!loo</span> - Let chat know I've gone to the loo.</div>
-<div class="command"><span class="cmd">!unloo</span> - Let chat know I'm back from the loo.</div>
-<div class="command"><span class="cmd">!blammo</span> - Plus 1 when I get a LeMat Shotgun kill.</div>
-<div class="command"><span class="cmd">?blammo</span> - See how many people I've Blammo'd.</div>
-<div class="command"><span class="cmd">!fme</span> - Plus 1 when I say "F**k Me".</div>
-<div class="command"><span class="cmd">?fme</span> - See how many times I've said F Me.</div>
-<div class="command"><span class="cmd">!hug</span> - Hug someone in chat.</div>
-<div class="command"><span class="cmd">?hug</span> - See how many hugs we've had.</div>
-<div class="command"><span class="cmd">!spank</span> - Spank someone in chat.</div>
-<div class="command"><span class="cmd">?spank</span> - See how many spanks we've had.</div>
-<div class="command"><span class="cmd">?checkin</span> - See how many times you've checked in.</div>
+<div class="command-grid">
+
+<div class="command"><span class="cmd">!discord</span></div>
+<div class="command"><span class="cmd">!addquote</span></div>
+<div class="command"><span class="cmd">!quote</span></div>
+<div class="command"><span class="cmd">!socials</span></div>
+<div class="command"><span class="cmd">!yt</span></div>
+<div class="command"><span class="cmd">!tiktok</span></div>
+<div class="command"><span class="cmd">!throne</span></div>
+<div class="command"><span class="cmd">!lurk</span></div>
+<div class="command"><span class="cmd">!unlurk</span></div>
+<div class="command"><span class="cmd">!sma</span></div>
+<div class="command"><span class="cmd">!onlyfans</span></div>
+<div class="command"><span class="cmd">!followage</span></div>
+<div class="command"><span class="cmd">!posture</span></div>
+<div class="command"><span class="cmd">!loo</span></div>
+<div class="command"><span class="cmd">!unloo</span></div>
+<div class="command"><span class="cmd">!blammo</span></div>
+<div class="command"><span class="cmd">?blammo</span></div>
+<div class="command"><span class="cmd">!fme</span></div>
+<div class="command"><span class="cmd">?fme</span></div>
+<div class="command"><span class="cmd">!hug</span></div>
+<div class="command"><span class="cmd">?hug</span></div>
+<div class="command"><span class="cmd">!spank</span></div>
+<div class="command"><span class="cmd">?spank</span></div>
+<div class="command"><span class="cmd">?checkin</span></div>
+
+</div>
 
 </div>
 
@@ -468,30 +510,38 @@ Click any command to copy it to your clipboard
 
 <h2>👾 Chat Forms</h2>
 
-<div class="command"><span class="cmd">!cage</span> - Put Chat in a cage</div>
-<div class="command"><span class="cmd">!crying</span> - Chat is sad</div>
-<div class="command"><span class="cmd">!fallen</span> - Chat fell</div>
-<div class="command"><span class="cmd">!fire</span> - Chat on fire</div>
-<div class="command"><span class="cmd">!hamster</span> - Hamster Chat</div>
-<div class="command"><span class="cmd">!hanging</span> - Wrapped and hanging</div>
-<div class="command"><span class="cmd">!heart</span> - Chat love</div>
-<div class="command"><span class="cmd">!needy</span> - Chat is needy</div>
-<div class="command"><span class="cmd">!jar</span> - Chat in a jar</div>
-<div class="command"><span class="cmd">!kiss</span> - Chat kisses Streamer</div>
-<div class="command"><span class="cmd">!nom</span> - Chat noms Streamer</div>
-<div class="command"><span class="cmd">!rope</span> - Chat is hanging out</div>
-<div class="command"><span class="cmd">!tank</span> - Chat in a tank</div>
-<div class="command"><span class="cmd">!wrapped</span> - Wrapped up</div>
+<div class="command-grid">
+
+<div class="command"><span class="cmd">!cage</span></div>
+<div class="command"><span class="cmd">!crying</span></div>
+<div class="command"><span class="cmd">!fallen</span></div>
+<div class="command"><span class="cmd">!fire</span></div>
+<div class="command"><span class="cmd">!hamster</span></div>
+<div class="command"><span class="cmd">!hanging</span></div>
+<div class="command"><span class="cmd">!heart</span></div>
+<div class="command"><span class="cmd">!needy</span></div>
+<div class="command"><span class="cmd">!jar</span></div>
+<div class="command"><span class="cmd">!kiss</span></div>
+<div class="command"><span class="cmd">!nom</span></div>
+<div class="command"><span class="cmd">!rope</span></div>
+<div class="command"><span class="cmd">!tank</span></div>
+<div class="command"><span class="cmd">!wrapped</span></div>
+
+</div>
 
 </div>
 
 <!-- VTUBER -->
 
-<div class="section" id="vtuber">
+<div class="section">
 
 <h2>🧢 VTuber Commands</h2>
 
-<h3>Hats</h3>
+<!-- HATS -->
+
+<h3 id="hats">VTuber Hats</h3>
+
+<div class="command-grid">
 
 <div class="command"><span class="cmd">!Ashamed</span></div>
 <div class="command"><span class="cmd">!Bald</span></div>
@@ -531,12 +581,24 @@ Click any command to copy it to your clipboard
 <div class="command"><span class="cmd">!Wholesome</span></div>
 <div class="command"><span class="cmd">!Why</span></div>
 
-<h3>Instants</h3>
+</div>
 
-<div class="command"><span class="cmd">!Ghost</span> - I Died</div>
-<div class="command"><span class="cmd">!Math</span> - Deep Thought</div>
+<!-- FX -->
 
-<h3>Change the colour of my Hair & Eyes</h3>
+<h3 id="instants">VTuber FX</h3>
+
+<div class="command-grid">
+
+<div class="command"><span class="cmd">!Ghost</span></div>
+<div class="command"><span class="cmd">!Math</span></div>
+
+</div>
+
+<!-- COLOURS -->
+
+<h3 id="colours">VTuber Colours</h3>
+
+<div class="command-grid">
 
 <div class="command"><span class="cmd">!Blue</span></div>
 <div class="command"><span class="cmd">!Orange</span></div>
@@ -548,24 +610,94 @@ Click any command to copy it to your clipboard
 
 </div>
 
+<!-- STICKERS -->
+
+<h3 id="stickers">VTuber Stickers</h3>
+
+<p class="section-note">
+These are not traditional commands. Type any of these words in chat and an instant sticker may appear on stream.
+</p>
+
+<div class="command-grid">
+
+<div class="command"><span class="cmd">Angry</span></div>
+<div class="command"><span class="cmd">Angy</span></div>
+<div class="command"><span class="cmd">Behave</span></div>
+<div class="command"><span class="cmd">Cute</span></div>
+<div class="command"><span class="cmd">Daddy</span></div>
+<div class="command"><span class="cmd">Dead</span></div>
+<div class="command"><span class="cmd">Ded</span></div>
+<div class="command"><span class="cmd">Touch</span></div>
+<div class="command"><span class="cmd">No Touch</span></div>
+<div class="command"><span class="cmd">><</span></div>
+<div class="command"><span class="cmd">:(</span></div>
+<div class="command"><span class="cmd">:-(</span></div>
+<div class="command"><span class="cmd">:P</span></div>
+<div class="command"><span class="cmd">:-P</span></div>
+<div class="command"><span class="cmd">F</span></div>
+<div class="command"><span class="cmd">Feed</span></div>
+<div class="command"><span class="cmd">Food</span></div>
+<div class="command"><span class="cmd">Help</span></div>
+<div class="command"><span class="cmd">L</span></div>
+<div class="command"><span class="cmd">LOL</span></div>
+<div class="command"><span class="cmd">LUL</span></div>
+<div class="command"><span class="cmd">KEK</span></div>
+<div class="command"><span class="cmd">KEKW</span></div>
+<div class="command"><span class="cmd">Hahaha</span></div>
+<div class="command"><span class="cmd">Mommy</span></div>
+<div class="command"><span class="cmd">Mummy</span></div>
+<div class="command"><span class="cmd">Bulli</span></div>
+<div class="command"><span class="cmd">Bully</span></div>
+<div class="command"><span class="cmd">Booly</span></div>
+<div class="command"><span class="cmd">Booli</span></div>
+<div class="command"><span class="cmd">Pro</span></div>
+<div class="command"><span class="cmd">Queen</span></div>
+<div class="command"><span class="cmd">Salt</span></div>
+<div class="command"><span class="cmd">Salty</span></div>
+<div class="command"><span class="cmd">Skill</span></div>
+<div class="command"><span class="cmd">Skill Diff</span></div>
+<div class="command"><span class="cmd">Skill Difference</span></div>
+<div class="command"><span class="cmd">Sleepy</span></div>
+<div class="command"><span class="cmd">Eepy</span></div>
+<div class="command"><span class="cmd">Smol</span></div>
+<div class="command"><span class="cmd">Small</span></div>
+<div class="command"><span class="cmd">Sus</span></div>
+<div class="command"><span class="cmd">Sussy</span></div>
+<div class="command"><span class="cmd">Tiny</span></div>
+<div class="command"><span class="cmd">Chaos</span></div>
+<div class="command"><span class="cmd">Tired</span></div>
+<div class="command"><span class="cmd">Toxic</span></div>
+<div class="command"><span class="cmd">Trash</span></div>
+<div class="command"><span class="cmd">Garbage</span></div>
+<div class="command"><span class="cmd">Rubbish</span></div>
+<div class="command"><span class="cmd">UwU</span></div>
+
+</div>
+
+</div>
+
 <!-- SONGS -->
 
 <div class="section" id="songs">
 
 <h2>🎵 Song Requests (Subs & VIPs)</h2>
 
-<p style="color:#ccc;">
-Channel point redeem available for everyone
+<p class="section-note">
+Channel point redeem available
 </p>
 
-<div class="command"><span class="cmd">!sr</span> - Request a song</div>
-<div class="command"><span class="cmd">!song</span> - Shows the current song</div>
-<div class="command"><span class="cmd">!songlink</span> - Get Spotify link</div>
-<div class="command"><span class="cmd">!lastsong</span> - Last played song</div>
-<div class="command"><span class="cmd">!requests</span> - Show requests</div>
-<div class="command"><span class="cmd">!myqueue</span> - Show queue spot</div>
-<div class="command"><span class="cmd">!queuedsongs</span> - Next songs</div>
-<div class="command"><span class="cmd">!remove</span> - Remove request</div>
+<div class="command-grid">
+
+<div class="command"><span class="cmd">!sr</span></div>
+<div class="command"><span class="cmd">!song</span></div>
+<div class="command"><span class="cmd">!songlink</span></div>
+<div class="command"><span class="cmd">!lastsong</span></div>
+<div class="command"><span class="cmd">!requests</span></div>
+<div class="command"><span class="cmd">!myqueue</span></div>
+<div class="command"><span class="cmd">!queuedsongs</span></div>
+<div class="command"><span class="cmd">!remove</span></div>
+
+</div>
 
 </div>
 
