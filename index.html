@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Misseos Commands</title>
 
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -50,6 +51,7 @@ flex-wrap:wrap;
 }
 
 .nav-btn {
+flex:0 0 auto;
 background:#ff7bc3;
 color:black;
 padding:6px 14px;
@@ -340,6 +342,12 @@ opacity:1;
 
 @media (max-width:950px) {
 
+.nav-inner {
+justify-content:flex-start;
+flex-wrap:nowrap;
+overflow-x:auto;
+}
+
 .top-row {
 grid-template-columns:1fr;
 }
@@ -366,6 +374,9 @@ padding:18px;
 <div class="nav-inner">
 
 <a class="nav-btn" href="#general">⚙️ General</a>
+<a class="nav-btn" href="#points">💰 Points</a>
+<a class="nav-btn" href="#pond">🎣 The Pond</a>
+<a class="nav-btn" href="#games">🎲 Games</a>
 <a class="nav-btn" href="#chat">👾 Chat</a>
 <a class="nav-btn" href="#hats">🧢 VTuber Hats</a>
 <a class="nav-btn" href="#instants">⚡ VTuber FX</a>
@@ -509,6 +520,7 @@ Click any command or trigger word to copy it
 <div class="command"><span class="cmd">!onlyfans</span> - OnlyFans!</div>
 <div class="command"><span class="cmd">!followage</span> - See how long you've been following.</div>
 <div class="command"><span class="cmd">!watchtime</span> - See how long you've been watching.</div>
+<div class="command"><span class="cmd">!watchtime (username)</span> - See another viewer's watch time.</div>
 <div class="command"><span class="cmd">!posture</span> - When I need a posture check.</div>
 <div class="command"><span class="cmd">!loo</span> - Let chat know I've gone to the loo.</div>
 <div class="command"><span class="cmd">!unloo</span> - Let chat know I'm back from the loo.</div>
@@ -521,6 +533,104 @@ Click any command or trigger word to copy it
 <div class="command"><span class="cmd">!spank</span> - Spank someone in chat.</div>
 <div class="command"><span class="cmd">?spank</span> - See how many spanks we've had.</div>
 <div class="command"><span class="cmd">?checkin</span> - See how many times you've checked in.</div>
+
+</div>
+
+</div>
+
+
+<!-- POINTS -->
+
+<div class="section" id="points">
+
+<h2>💰 Points</h2>
+
+<p class="section-note">
+Earn 5 points every 5 minutes while watching live, or 7 points when you have been active in chat during that time. Subscribers receive a 1.2x watch-time multiplier. Use the Check In channel point reward once per stream for another 100 points. Point gifts have a minimum of 1,000 points.
+</p>
+
+<div class="command-list">
+
+<div class="command"><span class="cmd">!points</span> - Check your points balance.</div>
+<div class="command"><span class="cmd">!points (username)</span> - Check another viewer's points balance.</div>
+<div class="command"><span class="cmd">!toppoints</span> - Show the top five point holders.</div>
+<div class="command"><span class="cmd">!givepoints @username (amount)</span> - Give another viewer at least 1,000 points.</div>
+<div class="command"><span class="cmd">!givepoints @username all</span> - Give another viewer all of your available points.</div>
+
+</div>
+
+</div>
+
+<!-- THE POND -->
+
+<div class="section" id="pond">
+
+<h2>🎣 The Pond</h2>
+
+<p class="section-note">
+Every fishing command shares a 10-minute cooldown. <strong>!fish</strong> is always free and uses Basic Bait. Good, Better and Best Bait are bought with points, and one bait is consumed each time you use its matching fishing command. Better bait increases your chances of finding rarer creatures and treasure, but it does not affect catch weight. Pond Score tracks every point earned through The Pond and is not reduced when you spend points.
+</p>
+
+<h3>Fishing &amp; Bait</h3>
+
+<div class="command-list">
+
+<div class="command"><span class="cmd">!fish</span> - Cast into The Pond with free Basic Bait.</div>
+<div class="command"><span class="cmd">!fishgood</span> - Cast using one Good Bait.</div>
+<div class="command"><span class="cmd">!fishbetter</span> - Cast using one Better Bait.</div>
+<div class="command"><span class="cmd">!fishbest</span> - Cast using one Best Bait.</div>
+<div class="command"><span class="cmd">!buygoodbait (1-10)</span> - Buy Good Bait for 50 points each.</div>
+<div class="command"><span class="cmd">!buybetterbait (1-10)</span> - Buy Better Bait for 150 points each.</div>
+<div class="command"><span class="cmd">!buybestbait (1-10)</span> - Buy Best Bait for 350 points each.</div>
+<div class="command"><span class="cmd">!bait</span> - Check your Good, Better and Best Bait totals.</div>
+
+</div>
+
+<h3>Journal &amp; Collections</h3>
+
+<div class="command-list">
+
+<div class="command"><span class="cmd">!pondjournal</span> - View a summary of your Pond Journal.</div>
+<div class="command"><span class="cmd">!pondcreatures (page)</span> - View the creatures you've discovered.</div>
+<div class="command"><span class="cmd">!pondtreasures (page)</span> - View the treasures you've discovered.</div>
+<div class="command"><span class="cmd">!pondjunk (page)</span> - View the junk you've pulled from The Pond.</div>
+<div class="command"><span class="cmd">!pondrecords</span> - View your personal Pond records and scores.</div>
+
+</div>
+
+<h3>Leaderboards &amp; Records</h3>
+
+<div class="command-list">
+
+<div class="command"><span class="cmd">!topfishers</span> - Show the all-time top five fishers by Pond Score.</div>
+<div class="command"><span class="cmd">!monthlyfishers</span> - Show this month's top five fishers.</div>
+<div class="command"><span class="cmd">!biggestcatch</span> - Show The Pond's all-time biggest catch.</div>
+<div class="command"><span class="cmd">!monthlybiggest</span> - Show this month's biggest catch.</div>
+<div class="command"><span class="cmd">!rarestcatch</span> - Show The Pond's all-time rarest catch.</div>
+<div class="command"><span class="cmd">!monthlyrarest</span> - Show this month's rarest catch.</div>
+
+</div>
+
+</div>
+
+<!-- GAMES -->
+
+<div class="section" id="games">
+
+<h2>🎲 Point Games</h2>
+
+<p class="section-note">
+The minimum wager is 10 points and the maximum is 5,000. Using <strong>all</strong> wagers your available balance up to the 5,000-point limit. Gamble has a 40% loss, 20% draw and 40% win chance. A Gamble win returns 1.5x your wager in total, while a Coin Flip win returns 2x your wager in total.
+</p>
+
+<div class="command-list">
+
+<div class="command"><span class="cmd">!gamble (amount)</span> - Gamble an amount for a chance to lose, break even or win 1.5x.</div>
+<div class="command"><span class="cmd">!gamble all</span> - Gamble your available points up to the 5,000-point limit.</div>
+<div class="command"><span class="cmd">!coinflip heads (amount)</span> - Choose heads and wager an amount for double or nothing.</div>
+<div class="command"><span class="cmd">!coinflip tails (amount)</span> - Choose tails and wager an amount for double or nothing.</div>
+<div class="command"><span class="cmd">!coinflip heads all</span> - Choose heads and wager your available points up to 5,000.</div>
+<div class="command"><span class="cmd">!coinflip tails all</span> - Choose tails and wager your available points up to 5,000.</div>
 
 </div>
 
