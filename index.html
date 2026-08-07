@@ -555,7 +555,7 @@ Earn points while watching, extra points for chatting. Checking in grants a bonu
 <div class="command"><span class="cmd">!points</span> - Check your points balance.</div>
 <div class="command"><span class="cmd">!points (username)</span> - Check another viewer's points balance.</div>
 <div class="command"><span class="cmd">!toppoints</span> - Show the top five point holders.</div>
-<div class="command"><span class="cmd">!givepoints @username (amount)</span> - Give another viewer at least 1,000 points.</div>
+<div class="command"><span class="cmd">!givepoints @username (amount)</span> - Give another viewer at least 100 points.</div>
 <div class="command"><span class="cmd">!givepoints @username all</span> - Give another viewer all of your available points.</div>
 
 </div>
@@ -563,7 +563,7 @@ Earn points while watching, extra points for chatting. Checking in grants a bonu
 <h3 id="pond">🎣 The Pond</h3>
 
 <p class="section-note">
-Every fishing command shares a 10-minute cooldown per user. <strong>!fish</strong> is always free and uses Basic Bait. Good, Better and Best Bait are bought with points and one bait is consumed each time you use its matching fishing command. Better bait increases your chances of finding rarer creatures and treasure, but it does not affect catch weight. Pond Score tracks every point earned through The Pond and is not reduced when you spend points.
+Fishing commands share one cooldown per user, starting at 10 minutes with the Basic Reel and reducing to as low as 7 minutes as you unlock better reels. <strong>!fish</strong> is always free and uses Basic Bait. Good, Better and Best Bait are bought with points and one bait is consumed each time you use its matching fishing command. Higher-tier bait improves your fish rarity odds, while rods improve fish weight luck and reels reduce your fishing cooldown. Pond Score is lifetime progression earned through The Pond and is never spent.
 </p>
 
 <h3>Fishing &amp; Bait</h3>
@@ -571,9 +571,9 @@ Every fishing command shares a 10-minute cooldown per user. <strong>!fish</stron
 <div class="command-list">
 
 <div class="command"><span class="cmd">!fish</span> - Cast into The Pond with free Basic Bait.</div>
-<div class="command"><span class="cmd">!fishgood</span> - Cast using one Good Bait.</div>
-<div class="command"><span class="cmd">!fishbetter</span> - Cast using one Better Bait.</div>
-<div class="command"><span class="cmd">!fishbest</span> - Cast using one Best Bait.</div>
+<div class="command"><span class="cmd">!fishgood</span> - Cast using one Good Bait for improved fish rarity odds.</div>
+<div class="command"><span class="cmd">!fishbetter</span> - Cast using one Better Bait for stronger fish rarity odds.</div>
+<div class="command"><span class="cmd">!fishbest</span> - Cast using one Best Bait for the strongest fish rarity odds.</div>
 <div class="command"><span class="cmd">!buygoodbait (1-10)</span> - Buy Good Bait for 50 points each.</div>
 <div class="command"><span class="cmd">!buybetterbait (1-10)</span> - Buy Better Bait for 150 points each.</div>
 <div class="command"><span class="cmd">!buybestbait (1-10)</span> - Buy Best Bait for 350 points each.</div>
@@ -585,11 +585,13 @@ Every fishing command shares a 10-minute cooldown per user. <strong>!fish</stron
 
 <div class="command-list">
 
-<div class="command"><span class="cmd">!pondjournal</span> - View a summary of your Pond Journal.</div>
-<div class="command"><span class="cmd">!pondcreatures (page)</span> - View the creatures you've discovered.</div>
+<div class="command"><span class="cmd">!pondjournal</span> - View a summary of your Pond Journal, progress, records and gear.</div>
+<div class="command"><span class="cmd">!pondgear</span> - View your current rod, reel, fishing cooldown and next gear unlock.</div>
+<div class="command"><span class="cmd">!pondfish (page)</span> - View the fish you've discovered, including rarity and best weight.</div>
+<div class="command"><span class="cmd">!pondcreatures (page)</span> - View the Pond creatures you've discovered and their best weights.</div>
 <div class="command"><span class="cmd">!pondtreasures (page)</span> - View the treasures you've discovered.</div>
 <div class="command"><span class="cmd">!pondjunk (page)</span> - View the junk you've pulled from The Pond.</div>
-<div class="command"><span class="cmd">!pondrecords</span> - View your personal Pond records and scores.</div>
+<div class="command"><span class="cmd">!pondrecords</span> - View your personal biggest fish, rarest fish and Pond Scores.</div>
 
 </div>
 
@@ -597,12 +599,12 @@ Every fishing command shares a 10-minute cooldown per user. <strong>!fish</stron
 
 <div class="command-list">
 
-<div class="command"><span class="cmd">!topfishers</span> - Show the all-time top five fishers by Pond Score.</div>
-<div class="command"><span class="cmd">!monthlyfishers</span> - Show this month's top five fishers.</div>
-<div class="command"><span class="cmd">!biggestcatch</span> - Show The Pond's all-time biggest catch.</div>
-<div class="command"><span class="cmd">!monthlybiggest</span> - Show this month's biggest catch.</div>
-<div class="command"><span class="cmd">!rarestcatch</span> - Show The Pond's all-time rarest catch.</div>
-<div class="command"><span class="cmd">!monthlyrarest</span> - Show this month's rarest catch.</div>
+<div class="command"><span class="cmd">!topfishers</span> - Show this month's top five fishers by Pond Score.</div>
+<div class="command"><span class="cmd">!topfishersalltime</span> - Show the all-time top five fishers by Pond Score.</div>
+<div class="command"><span class="cmd">!pondbiggest</span> - Show this month's biggest fish caught at The Pond.</div>
+<div class="command"><span class="cmd">!pondbiggestalltime</span> - Show The Pond's all-time biggest fish.</div>
+<div class="command"><span class="cmd">!pondrarest</span> - Show this month's rarest fish caught at The Pond.</div>
+<div class="command"><span class="cmd">!pondrarestalltime</span> - Show The Pond's all-time rarest fish.</div>
 
 </div>
 
